@@ -805,6 +805,9 @@ function renderList(){
         // + = simulate a reroll (exit without saving) - only affects this variant
         // - = commit the reroll (save & advance seed) - affects ALL variants
         if (act==="del") {
+          if (!confirm("Are you sure you want to delete this weapon variant? This action cannot be undone.")) {
+            return;
+          }
           for (const w of WEAPONS) {
             const arr = state.weapons[w.abbr].variants;
             const idx = arr.findIndex(v=>v.id===id);

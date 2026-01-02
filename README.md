@@ -14,6 +14,12 @@ A comprehensive reroll planning tool for Monster Hunter Wilds Gogmazios weapon v
 -   **Data Persistence**: Automatic save/load via localStorage
 -   **Import/Export**: Backup and restore your planning data
 
+## 📸 Screenshots
+
+### Main Interface
+
+![Homepage](screenshots/homepage.png)
+
 ## 📖 How to Use
 
 ### Adding Variants

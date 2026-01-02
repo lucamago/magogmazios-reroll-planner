@@ -66,6 +66,144 @@
     </div>
   </header>
 
+  <!-- Help Button (fixed bottom right) -->
+  <button id="btnHelp" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-sky-500 hover:bg-sky-600 text-white shadow-lg hover:shadow-xl transition-all flex items-center justify-center text-2xl" title="Usage Guide">
+    ❓
+  </button>
+
+  <!-- Help Overlay -->
+  <div id="helpOverlay" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 rounded-2xl border border-black/10 dark:border-white/10 max-w-3xl w-full max-h-[90vh] overflow-auto shadow-2xl">
+      <div class="sticky top-0 bg-white dark:bg-slate-900 border-b border-black/10 dark:border-white/10 p-6 flex items-center justify-between">
+        <h2 class="text-2xl font-extrabold flex items-center gap-3">
+          📖 MaGogmazios Reroll Planner Guide
+        </h2>
+        <button id="btnCloseHelp" class="w-10 h-10 rounded-xl hover:bg-black/10 dark:hover:bg-white/10 flex items-center justify-center text-2xl transition-all">
+          ✕
+        </button>
+      </div>
+
+      <div class="p-6 space-y-6">
+        <section>
+          <h3 class="text-xl font-bold mb-3 flex items-center gap-2">🎯 What is MaGogmazios Reroll Planner?</h3>
+          <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+            Gogmazios weapons have skills and reinforcements determined by <b>predetermined tables based on element type</b>.
+            Each weapon (fire lance, dragon lance, etc.) follows a fixed sequence of rolls that doesn't change between attempts.
+            This app lets you test and track rolls <b>without saving the game</b>, discovering when desired values appear,
+            then optimize the use of rare materials to forge multiple weapons efficiently.
+          </p>
+        </section>
+
+        <section class="bg-sky-50 dark:bg-sky-950/30 rounded-xl p-4 border border-sky-200 dark:border-sky-800">
+          <h3 class="text-xl font-bold mb-3 flex items-center gap-2">🔄 The Planning Phase</h3>
+          <ol class="space-y-3 text-slate-700 dark:text-slate-300">
+            <li class="flex gap-3">
+              <span class="font-bold text-sky-600 dark:text-sky-400 min-w-[24px]">1.</span>
+              <span><b>Add weapons to the app</b> using "+ Add Weapon" and mark them as "Have" (check the box)</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="font-bold text-sky-600 dark:text-sky-400 min-w-[24px]">2.</span>
+              <span><b>Set your target values</b> — specify which skills and reinforcements you want for each weapon</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="font-bold text-sky-600 dark:text-sky-400 min-w-[24px]">3.</span>
+              <span><b>In-game: reroll without saving</b> — perform rerolls and use the <b>+ buttons</b> in the app to track each test roll</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="font-bold text-sky-600 dark:text-sky-400 min-w-[24px]">4.</span>
+              <span><b>Keep testing until satisfied</b> — the + buttons simulate future rolls to find when you'll get desired results</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="font-bold text-sky-600 dark:text-sky-400 min-w-[24px]">5.</span>
+              <span><b>Exit without saving</b> and repeat for all weapons you want to modify</span>
+            </li>
+          </ol>
+        </section>
+
+        <section class="bg-green-50 dark:bg-green-950/30 rounded-xl p-4 border border-green-200 dark:border-green-800">
+          <h3 class="text-xl font-bold mb-3 flex items-center gap-2">✅ The Execution Phase</h3>
+          <ol class="space-y-3 text-slate-700 dark:text-slate-300">
+            <li class="flex gap-3">
+              <span class="font-bold text-green-600 dark:text-green-400 min-w-[24px]">1.</span>
+              <span><b>Check "Next recommended"</b> — the app shows which weapon to start with to minimize material usage</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="font-bold text-green-600 dark:text-green-400 min-w-[24px]">2.</span>
+              <span><b>Reload your save</b> and start rerolling for real this time</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="font-bold text-green-600 dark:text-green-400 min-w-[24px]">3.</span>
+              <span><b>Use the - buttons</b> to track actual rolls as you perform them in-game (this reduces the counters)</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="font-bold text-green-600 dark:text-green-400 min-w-[24px]">4.</span>
+              <span><b>Save the game</b> when you get the desired values for each weapon</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="font-bold text-green-600 dark:text-green-400 min-w-[24px]">5.</span>
+              <span><b>Move to the next weapon</b> following the app's recommendations to optimize material efficiency</span>
+            </li>
+          </ol>
+        </section>
+
+        <section>
+          <h3 class="text-xl font-bold mb-3 flex items-center gap-2">💡 Understanding the Interface</h3>
+          <div class="space-y-4">
+            <div class="bg-black/5 dark:bg-white/5 rounded-xl p-4">
+              <h4 class="font-bold mb-2 flex items-center gap-2">
+                <span class="text-2xl">🎲</span> The Buttons: S+ / S- and R+ / R-
+              </h4>
+              <p class="text-sm text-slate-700 dark:text-slate-300 mb-2">
+                <b>S+</b> and <b>R+</b>: Increment counters during <b>planning phase</b> (testing without saving)<br/>
+                <b>S-</b> and <b>R-</b>: Decrement counters during <b>execution phase</b> (actual rerolls you'll save)
+              </p>
+              <p class="text-sm text-slate-600 dark:text-slate-400 italic">
+                S = Skills remaining | R = Reinforcements remaining
+              </p>
+            </div>
+
+            <div class="bg-black/5 dark:bg-white/5 rounded-xl p-4">
+              <h4 class="font-bold mb-2 flex items-center gap-2">
+                <span class="text-2xl">✅</span> Next Recommended
+              </h4>
+              <p class="text-sm text-slate-700 dark:text-slate-300">
+                Shows which weapon to work on first to use the least materials. It picks weapons with the smallest remaining counters and skips those already at 0.
+              </p>
+            </div>
+
+            <div class="bg-black/5 dark:bg-white/5 rounded-xl p-4">
+              <h4 class="font-bold mb-2 flex items-center gap-2">
+                <span class="text-2xl">📦</span> Materials Tracker
+              </h4>
+              <p class="text-sm text-slate-700 dark:text-slate-300">
+                <b>"Devices needed"</b>: Shows how many Tarred Devices you need (3 matching element or 6 any type per skill roll)<br/>
+                <b>"Oricalcite needed"</b>: Shows total Oricalcite required (20 per reinforcement roll)
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-amber-50 dark:bg-amber-950/30 rounded-xl p-4 border border-amber-200 dark:border-amber-800">
+          <h3 class="text-lg font-bold mb-2 flex items-center gap-2">⚡ Pro Tip: Shared Tables</h3>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            Since weapons of the same element share roll tables, testing multiple weapons in parallel helps you map out the entire sequence.
+            This way you can strategically plan which weapons to forge in which order, maximizing efficiency by forging multiple weapons
+            with desired rolls using the minimum amount of materials.
+          </p>
+        </section>
+
+        <section class="border-t border-black/10 dark:border-white/10 pt-4">
+          <p class="text-xs text-slate-500 dark:text-slate-400 text-center">
+            For more details about the mechanics, visit:
+            <a href="https://lescarnetsdelawycademie.fr/gogmazios-weapons/" target="_blank" class="text-sky-500 hover:text-sky-600 underline">
+              Les Carnets de l'Awycadémie
+            </a>
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+
   <main class="max-w-7xl mx-auto px-4 py-4 grid lg:grid-cols-[380px_1fr] gap-3">
     <section class="rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-slate-900/40 p-4 space-y-4 lg:sticky lg:top-[72px] lg:h-[calc(100vh-96px)] lg:overflow-auto">
 
@@ -829,6 +967,35 @@ function initTheme(){
 
 // Call init function
 initTheme();
+
+// Help overlay functionality
+const btnHelp = $("#btnHelp");
+const btnCloseHelp = $("#btnCloseHelp");
+const helpOverlay = $("#helpOverlay");
+
+if (btnHelp && helpOverlay && btnCloseHelp) {
+  btnHelp.onclick = () => {
+    helpOverlay.classList.remove("hidden");
+  };
+
+  btnCloseHelp.onclick = () => {
+    helpOverlay.classList.add("hidden");
+  };
+
+  // Close overlay when clicking on the backdrop
+  helpOverlay.onclick = (e) => {
+    if (e.target === helpOverlay) {
+      helpOverlay.classList.add("hidden");
+    }
+  };
+
+  // Close overlay with ESC key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !helpOverlay.classList.contains("hidden")) {
+      helpOverlay.classList.add("hidden");
+    }
+  });
+}
 
 renderAll();
 </script>

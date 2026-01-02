@@ -18,7 +18,7 @@ A comprehensive reroll planning tool for Monster Hunter Wilds Gogmazios weapon v
 
 ### Main Interface
 
-![Homepage](screenshots/homepage.png)
+![Homepage](screenshots/homepage.jpg)
 
 ## 📖 How to Use
 

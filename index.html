@@ -382,6 +382,13 @@ function elemClass(e){
   };
   return m[e] || "b-raw";
 }
+function elemIcon(e){
+  const m = {
+    Raw:"🍖",Fire:"🔥",Water:"💧",Thunder:"⚡",Ice:"❄️",Dragon:"🐉",
+    Paralysis:"🫨",Sleep:"💤",Blast:"💥",Poison:"☠️"
+  };
+  return m[e] || "🍖";
+}
 
 function remaining(v){
   const remS = Math.max(0, Number(v.rollsNeedSkills||0) - state.global.skillSpent);
@@ -654,7 +661,7 @@ function renderList(){
                       ${ARTIAN_TYPES.map(a=>`<option value="${esc(a)}"${a===v.artian?" selected":""}>${esc(a)}</option>`).join("")}
                     </select>
 
-                    <span class="px-2 py-1 rounded-full text-xs border border-black/10 dark:border-white/10 text-white ${elemClass(v.element)}">${esc(v.element)}</span>
+                    <span class="px-2 py-1 rounded-full text-xs border border-black/10 dark:border-white/10 text-white ${elemClass(v.element)}">${elemIcon(v.element)} ${esc(v.element)}</span>
                     <span class="px-2 py-1 rounded-full text-xs border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5">${esc(v.artian)}</span>
 
                     <span class="ml-auto flex items-center gap-3 text-xs text-slate-600 dark:text-slate-300">
